@@ -7,12 +7,15 @@ export default function Home() {
         <span className="badge">Next.js Lesson 1</span>
         <h1>Chào mừng đến với project đầu tiên</h1>
         <p>
-          Đây là trang chủ. Tôi đã thêm một màn hình mới để bạn có thể mở rộng repo
-          này theo kiểu landing page + màn hình giới thiệu.
+          Đây là trang chủ. Repo hiện có nhiều màn hình hơn để bạn dùng làm base
+          cho bài học, demo UI hoặc landing page đơn giản.
         </p>
-        <div className="actions">
+        <div className="actions centered-actions">
           <Link href="/welcome" className="primary-btn">
-            Mở màn hình mới
+            Mở welcome screen
+          </Link>
+          <Link href="/course" className="secondary-btn">
+            Mở course screen mới
           </Link>
         </div>
       </section>
