@@ -5,7 +5,8 @@ Một project Next.js cơ bản dùng App Router.
 ## Hiện có gì
 
 - Trang chủ `/`
-- Màn hình mới `/welcome`
+- Màn hình `/welcome`
+- Màn hình mới `/course`
 - Giao diện cơ bản bằng `app/globals.css`
 - Dùng Next.js 15 + React 19 + TypeScript
 
@@ -20,6 +21,7 @@ Sau đó mở:
 
 - `http://localhost:3000/`
 - `http://localhost:3000/welcome`
+- `http://localhost:3000/course`
 
 ## Build production
 
