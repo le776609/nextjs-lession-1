@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import {
+  droneFleet,
   energyRails,
   missionTimeline,
   statusFeed,
@@ -112,6 +113,30 @@ export default function CommandCenterPage() {
                 ))}
               </div>
             </section>
+          </section>
+
+          <section className="command-panel fleet-panel">
+            <div className="panel-heading">
+              <span>Drone Fleet</span>
+              <strong>Autonomous formation map</strong>
+            </div>
+            <div className="fleet-grid">
+              {droneFleet.map((drone) => (
+                <article key={drone.name} className="fleet-card">
+                  <div className="fleet-card-top">
+                    <strong>{drone.name}</strong>
+                    <span>{drone.role}</span>
+                  </div>
+                  <div className="fleet-meter">
+                    <span />
+                  </div>
+                  <div className="fleet-meta">
+                    <small>Battery {drone.battery}</small>
+                    <small>{drone.state}</small>
+                  </div>
+                </article>
+              ))}
+            </div>
           </section>
 
           <div className="actions">
