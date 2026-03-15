@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { systemStats } from './data';
 
 export default function CommandCenterPage() {
   return (
@@ -13,12 +14,33 @@ export default function CommandCenterPage() {
 
       <section className="command-shell">
         <div className="command-frame">
-          <span className="command-kicker">Phase 3 · Animated Screen</span>
-          <h1>Orbital Command Center</h1>
-          <p>
-            Một màn hình mới theo phong cách sci-fi dashboard. Từ đây mình sẽ
-            bổ sung dần nhiều lớp giao diện và animation để tạo cảm giác phức tạp.
-          </p>
+          <header className="command-hero">
+            <div>
+              <span className="command-kicker">Phase 3 · Animated Screen</span>
+              <h1>Orbital Command Center</h1>
+              <p>
+                Giao diện mới mô phỏng một trung tâm điều phối ngoài quỹ đạo với
+                nhiều lớp thông tin, tín hiệu động và bảng điều khiển dày đặc.
+              </p>
+            </div>
+
+            <div className="command-hero-panel">
+              <strong>Live Core Status</strong>
+              <span>All systems synced · latency 12ms</span>
+              <div className="command-hero-line" />
+              <small>Telemetry stream refreshed every 3.2s</small>
+            </div>
+          </header>
+
+          <section className="command-stats">
+            {systemStats.map((stat) => (
+              <article key={stat.label} className="command-stat-card">
+                <span>{stat.label}</span>
+                <strong>{stat.value}</strong>
+                <small>{stat.detail}</small>
+              </article>
+            ))}
+          </section>
 
           <div className="actions">
             <Link href="/" className="secondary-btn">
