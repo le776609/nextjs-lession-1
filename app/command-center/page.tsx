@@ -3,6 +3,14 @@ import Link from 'next/link';
 export default function CommandCenterPage() {
   return (
     <main className="command-page">
+      <div className="command-background" aria-hidden="true">
+        <span className="command-orb orb-a" />
+        <span className="command-orb orb-b" />
+        <span className="command-orb orb-c" />
+        <span className="command-grid" />
+        <span className="command-noise" />
+      </div>
+
       <section className="command-shell">
         <div className="command-frame">
           <span className="command-kicker">Phase 3 · Animated Screen</span>
