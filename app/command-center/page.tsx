@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { statusFeed, systemStats } from './data';
+import { missionTimeline, statusFeed, systemStats } from './data';
 
 export default function CommandCenterPage() {
   return (
@@ -73,6 +73,24 @@ export default function CommandCenterPage() {
                 ))}
               </div>
             </article>
+          </section>
+
+          <section className="command-panel timeline-panel">
+            <div className="panel-heading">
+              <span>Mission Timeline</span>
+              <strong>Current orbital cycle</strong>
+            </div>
+            <div className="timeline-list">
+              {missionTimeline.map((item) => (
+                <article key={item.time + item.title} className="timeline-item">
+                  <div className="timeline-time">{item.time}</div>
+                  <div>
+                    <h2>{item.title}</h2>
+                    <p>{item.detail}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </section>
 
           <div className="actions">
