@@ -1,5 +1,10 @@
 import Link from 'next/link';
-import { missionTimeline, statusFeed, systemStats } from './data';
+import {
+  energyRails,
+  missionTimeline,
+  statusFeed,
+  systemStats,
+} from './data';
 
 export default function CommandCenterPage() {
   return (
@@ -75,22 +80,38 @@ export default function CommandCenterPage() {
             </article>
           </section>
 
-          <section className="command-panel timeline-panel">
-            <div className="panel-heading">
-              <span>Mission Timeline</span>
-              <strong>Current orbital cycle</strong>
-            </div>
-            <div className="timeline-list">
-              {missionTimeline.map((item) => (
-                <article key={item.time + item.title} className="timeline-item">
-                  <div className="timeline-time">{item.time}</div>
-                  <div>
-                    <h2>{item.title}</h2>
-                    <p>{item.detail}</p>
+          <section className="command-lower-grid">
+            <section className="command-panel timeline-panel">
+              <div className="panel-heading">
+                <span>Mission Timeline</span>
+                <strong>Current orbital cycle</strong>
+              </div>
+              <div className="timeline-list">
+                {missionTimeline.map((item) => (
+                  <article key={item.time + item.title} className="timeline-item">
+                    <div className="timeline-time">{item.time}</div>
+                    <div>
+                      <h2>{item.title}</h2>
+                      <p>{item.detail}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section className="command-panel energy-panel">
+              <div className="panel-heading">
+                <span>Energy Rails</span>
+                <strong>Pulse distribution</strong>
+              </div>
+              <div className="energy-bars">
+                {energyRails.map((level, index) => (
+                  <div key={index} className="energy-bar">
+                    <span style={{ height: `${level}%` }} />
                   </div>
-                </article>
-              ))}
-            </div>
+                ))}
+              </div>
+            </section>
           </section>
 
           <div className="actions">
