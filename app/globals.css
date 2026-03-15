@@ -214,3 +214,29 @@ p {
     font-size: 16px;
   }
 }
+
+@keyframes floatOrb {
+  0%,
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(0, -24px, 0) scale(1.06); }
+}
+
+@keyframes spinSweep {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.45; box-shadow: 0 0 0 rgba(52, 211, 153, 0.1); }
+  50% { opacity: 1; box-shadow: 0 0 24px rgba(52, 211, 153, 0.6); }
+}
+
+@keyframes signalWave {
+  0%, 100% { opacity: 0.35; transform: scaleY(0.72); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes borderShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
