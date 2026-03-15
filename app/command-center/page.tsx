@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { systemStats } from './data';
+import { statusFeed, systemStats } from './data';
 
 export default function CommandCenterPage() {
   return (
@@ -40,6 +40,39 @@ export default function CommandCenterPage() {
                 <small>{stat.detail}</small>
               </article>
             ))}
+          </section>
+
+          <section className="command-grid-layout">
+            <article className="command-panel radar-panel">
+              <div className="panel-heading">
+                <span>Sector Radar</span>
+                <strong>12 active traces</strong>
+              </div>
+              <div className="radar-core">
+                <span className="radar-ring ring-1" />
+                <span className="radar-ring ring-2" />
+                <span className="radar-ring ring-3" />
+                <span className="radar-sweep" />
+                <span className="radar-dot dot-1" />
+                <span className="radar-dot dot-2" />
+                <span className="radar-dot dot-3" />
+              </div>
+            </article>
+
+            <article className="command-panel status-panel">
+              <div className="panel-heading">
+                <span>Status Feed</span>
+                <strong>Realtime uplink</strong>
+              </div>
+              <div className="status-list">
+                {statusFeed.map((item) => (
+                  <div key={item} className="status-item">
+                    <span className="status-ping" />
+                    <p>{item}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
           </section>
 
           <div className="actions">
