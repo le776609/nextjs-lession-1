@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   droneFleet,
@@ -6,6 +7,12 @@ import {
   statusFeed,
   systemStats,
 } from './data';
+
+export const metadata: Metadata = {
+  title: 'Orbital Command Center',
+  description:
+    'Màn hình dashboard sci-fi nhiều animation được thêm vào repo nextjs-lession-1.',
+};
 
 const actions = ['Stabilize Grid', 'Deploy Probe', 'Sync Nodes', 'Run Diagnostics'];
 
@@ -107,9 +114,9 @@ export default function CommandCenterPage() {
                 <span>Energy Rails</span>
                 <strong>Pulse distribution</strong>
               </div>
-              <div className="energy-bars">
+              <div className="energy-bars" aria-label="Energy rail activity levels">
                 {energyRails.map((level, index) => (
-                  <div key={index} className="energy-bar">
+                  <div key={index} className="energy-bar" aria-hidden="true">
                     <span style={{ height: `${level}%` }} />
                   </div>
                 ))}
@@ -129,7 +136,7 @@ export default function CommandCenterPage() {
                     <strong>{drone.name}</strong>
                     <span>{drone.role}</span>
                   </div>
-                  <div className="fleet-meter">
+                  <div className="fleet-meter" aria-hidden="true">
                     <span />
                   </div>
                   <div className="fleet-meta">
