@@ -7,6 +7,8 @@ import {
   systemStats,
 } from './data';
 
+const actions = ['Stabilize Grid', 'Deploy Probe', 'Sync Nodes', 'Run Diagnostics'];
+
 export default function CommandCenterPage() {
   return (
     <main className="command-page">
@@ -139,11 +141,27 @@ export default function CommandCenterPage() {
             </div>
           </section>
 
-          <div className="actions">
-            <Link href="/" className="secondary-btn">
-              Về trang chủ
-            </Link>
-          </div>
+          <section className="command-panel dock-panel">
+            <div className="panel-heading">
+              <span>Action Dock</span>
+              <strong>Quick intervention commands</strong>
+            </div>
+            <div className="dock-actions">
+              {actions.map((action) => (
+                <button key={action} type="button" className="dock-btn">
+                  {action}
+                </button>
+              ))}
+            </div>
+            <div className="command-nav">
+              <Link href="/" className="secondary-btn">
+                Về trang chủ
+              </Link>
+              <Link href="/course" className="primary-btn">
+                Xem course screen
+              </Link>
+            </div>
+          </section>
         </div>
       </section>
     </main>
