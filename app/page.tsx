@@ -17,6 +17,9 @@ export default function Home() {
           <Link href="/course" className="secondary-btn">
             Mở course screen mới
           </Link>
+          <Link href="/command-center" className="secondary-btn">
+            Mở command center mới
+          </Link>
         </div>
       </section>
     </main>
